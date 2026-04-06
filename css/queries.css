@@ -1,0 +1,110 @@
+:root {
+  --primary-color: hsl(4, 100%, 67%);
+
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/* Tablet Styles */
+@media (min-width: 48em) {
+  body {
+    font-size: 1.8rem;
+    background-color: var(--blue-800);
+  }
+  .newsletter-card {
+    background-color: var(--white);
+    max-width: 70rem;
+    margin: 2rem;
+    border-radius: 2.4rem;
+    overflow: hidden;
+  }
+
+  .newsletter-card__signup {
+    min-height: max-content;
+  }
+
+  .success-modal {
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+    min-height: max-content;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 64em) {
+  body {
+    font-size: 2rem;
+    background-color: var(--blue-800);
+    position: relative; /* Establishes a containing block for the absolute positioning of the success modal */
+  }
+
+  .newsletter-card {
+    max-width: 92rem;
+  }
+
+  .newsletter-card__signup {
+    padding: 2.4rem; /* The white 'frame' around the content */
+  }
+
+  .newsletter-card__signup {
+    flex-direction: row-reverse; /* Flips image to the right */
+    align-items: center;
+    gap: 4rem;
+    min-height: max-content;
+  }
+
+  .newsletter-card__image-container {
+    flex: 1;
+  }
+
+  .newsletter-card__content {
+    flex: 1.2; /* Gives the text a bit more room than the image */
+    padding: 0 4rem;
+  }
+
+  .success-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    padding: 4rem;
+    border-radius: 2.4rem;
+    text-align: center;
+    text-align: left;
+    max-width: 50rem;
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+  }
+
+  .success-modal img {
+    margin-bottom: 2rem;
+  }
+
+  .success-modal__title {
+    font-size: 4.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .success-modal__description {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  @keyframes fadeInDesktop {
+    0% {
+      opacity: 0;
+      /* Notice we keep the -50% centering here too! */
+      transform: translate(-50%, calc(-50% + 20px));
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .success-modal:not(.hidden) {
+    /* Overriding the mobile animation with the desktop one */
+    animation: fadeInDesktop 0.4s ease-out forwards;
+  }
+}
