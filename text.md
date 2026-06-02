@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Sign-up form start -->
 
 Stay updated!
@@ -25,3 +26,32 @@ Please open it and click the button inside to confirm your subscription.
 Dismiss message
 
   <!-- Success message end -->
+=======
+<!-- Sign-up form start -->
+
+Stay updated!
+
+Join 60,000+ product managers receiving monthly updates on:
+
+Product discovery and building what matters
+Measuring to ensure updates are a success
+And much more!
+
+Email address
+email@company.com
+
+Subscribe to monthly newsletter
+
+  <!-- Sign-up form end -->
+
+  <!-- Success message start -->
+
+Thanks for subscribing!
+
+A confirmation email has been sent to ash@loremcompany.com.
+Please open it and click the button inside to confirm your subscription.
+
+Dismiss message
+
+  <!-- Success message end -->
+>>>>>>> e77612a0a12be1e096d1cc94c776dbd97c7ff364
