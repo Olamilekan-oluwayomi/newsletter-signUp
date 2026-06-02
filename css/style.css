@@ -1,0 +1,194 @@
+:root {
+  --primary-color: hsl(4, 100%, 67%);
+
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  min-height: 100vh;
+}
+
+.newsletter-card {
+  width: 100%;
+  max-width: 45rem; /* 375px */
+
+  overflow: hidden; /* Ensures the image and content are contained within the card */
+}
+
+.newsletter-card__signup {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.newsletter-card__image-container img {
+  width: 100%;
+  display: block; /* Removes the bottom whitespace gap */
+}
+
+.newsletter-card__content {
+  padding: 4rem 2.4rem;
+  color: var(--blue-800);
+}
+
+.newsletter-card__title {
+  font-size: 3.8rem;
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+}
+
+.newsletter-card__description {
+  font-size: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.newsletter-card__list {
+  list-style: none;
+  margin-bottom: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.newsletter-card__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+}
+
+.newsletter-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.form-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newsletter-card__label {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.form-flex span {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.newsletter-card__input {
+  padding: 1.2rem;
+  border: 1px solid var(--grey);
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  font-family: inherit;
+}
+
+.newsletter-card__input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+.newsletter-card__input.success:focus,
+.newsletter-card__input.success {
+  outline: 2px solid #4caf50 !important;
+  border-color: #4caf50 !important;
+}
+
+.newsletter-card__button {
+  padding: 1.2rem;
+  background-color: var(--blue-800);
+  color: var(--white);
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-card__button:hover {
+  background-color: var(--primary-color);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.success-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  gap: 2rem;
+  padding: 5rem 2.4rem;
+  min-height: 80vh;
+}
+
+.success-modal__title {
+  font-size: 3.8rem;
+  color: var(--blue-800);
+}
+
+.success-modal__description {
+  font-size: 1.6rem;
+  color: var(--blue-800);
+}
+.success-modal__description em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.success-modal__button {
+  padding: 1.8rem 1.2rem;
+  background-color: var(--blue-800);
+  color: var(--white);
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: auto;
+  font-weight: 700;
+}
+
+.success-modal:not(.hidden) {
+  animation: fadeInMobile 0.4s ease-out;
+}
+
+@keyframes fadeInMobile {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
