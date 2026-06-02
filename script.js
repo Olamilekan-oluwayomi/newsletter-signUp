@@ -39,14 +39,24 @@ signupForm.addEventListener("submit", (e) => {
   const emailValue = emailInput.value.trim();
 
   if (validateEmail(emailValue)) {
-    // SUCCESS STATE
-    submittedEmail.textContent = emailValue;
-    signupCard.classList.add("hidden");
-    successModal.classList.remove("hidden");
-
-    // Clear errors if any existed from previous attempts
-    emailInput.classList.remove("newsletter-card__input--error");
-    errorMessage.classList.add("hidden");
+    emailjs
+      .send("service_l98ahv9", "template_kts4tec", {
+        to_email: emailValue,
+      })
+      .then(() => {
+        // Email sent successfully — now show the modal
+        submittedEmail.textContent = emailValue;
+        signupCard.classList.add("hidden");
+        successModal.classList.remove("hidden");
+        emailInput.classList.remove("newsletter-card__input--error");
+        errorMessage.classList.add("hidden");
+      })
+      .catch((error) => {
+        // Email failed — tell the user something went wrong
+        console.error(error);
+        errorMessage.textContent = "Something went wrong. Please try again.";
+        errorMessage.classList.remove("hidden");
+      });
   } else {
     emailInput.classList.add("newsletter-card__input--error");
     errorMessage.classList.remove("hidden");
