@@ -1,3 +1,5 @@
+emailjs.init("Fsw7NmZ2VdBAUrwn3");
+
 // The two main views
 const signupCard = document.querySelector(".newsletter-card__signup");
 const successModal = document.querySelector(".success-modal");
